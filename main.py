@@ -36,10 +36,8 @@ def send_email_backgroundtasks(background_tasks: BackgroundTasks):
 def send_email_queue(data: SendingEmailSchema):
     with session as db_session:
         new_entry = EmailSchedule(title=data.title, email_to=data.email, message=data.message, status="")
-        print("here \n")
         db_session.add(new_entry)
         db_session.commit()
-        db_session.rollback()
         return {
             "message": "Added successfully"
         }
