@@ -1,0 +1,6 @@
+.env
+.idea
+identifier.sqlite
+test_main.http
+database.db
+__pycache__
